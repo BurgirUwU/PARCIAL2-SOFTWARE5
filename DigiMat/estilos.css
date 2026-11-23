@@ -1,0 +1,378 @@
+
+/* ================= ESTILOS GENERALES ================= */
+
+/* Aqui es para quitar los tamaños y ajustarlos a como queremos*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Color de fondo de la pagina, detras del padding*/
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #e9ddf5;
+    color: #51445f;
+    min-height: 100vh;
+    padding: 25px;
+}
+
+/*Este es el cuadro principal*/
+.contenedor {
+    max-width: 1100px;
+    margin: auto;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 22px;
+    box-shadow: 0 8px 25px rgba(87, 63, 110, 0.12);
+    position: relative;
+    min-height: 90vh;
+}
+
+/* ================= PANTALLAS ================= */
+
+/* Al inicio todas las pantallas estan ocultas */
+.pantalla {
+    display: none;
+    animation: aparecer 0.4s ease;
+}
+
+/* se muestra solo la pantalla activa*/
+.pantalla.activa {
+    display: block;
+}
+
+/* Animacion de cambio de pantallas */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= BANNER ================= */
+
+/* Espacio donde se coloca la imagen principal */
+.banner {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    border-radius: 18px;
+    margin-bottom: 30px;
+    background-color: #d8c4ec;
+}
+
+/* Aqui es para adaptar la imagen al tamaño del banner*/
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ================= ENCABEZADO ================= */
+
+.encabezado {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.encabezado h1 {
+    color: #8061a5;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.encabezado p {
+    color: #82778c;
+    font-size: 16px;
+}
+
+/* ================= TARJETAS DEL MENU ================= */
+
+/* Hacemos que las tarjetas esten colocadas en 2x2 */
+.opciones {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    padding-bottom: 100px;
+}
+
+/* Diseño individual de cada tarjeta */
+.tarjeta {
+    background-color: #f6f0fc;
+    border: 1px solid #e8d9f5;
+    border-radius: 18px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Efecto cuando pasamos el cursor por la tarjeta */
+.tarjeta:hover {
+    background-color: #eee3fa;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(112, 79, 145, 0.13);
+}
+
+/* Imagen de cada opcion */
+.tarjeta img {
+    width: 115px;
+    height: 115px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.35s ease;
+}
+
+/* La imagen se ladea un poco al pasar el cursor */
+.tarjeta:hover img {
+    transform: rotate(-5deg) scale(1.05);
+}
+
+/* Texto que aparece dentro de cada tarjeta */
+.contenido-tarjeta h3 {
+    color: #765594;
+    font-size: 17px;
+    margin-bottom: 9px;
+}
+
+.contenido-tarjeta p {
+    color: #82778c;
+    font-size: 13px;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+/* Texto que indica que se puede entrar */
+.contenido-tarjeta span {
+    color: #9975bd;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* ================= MUÑEQUITO ================= */
+
+/* Posicion del muñequito en la parte inferior derecha */
+.muneco {
+    position: absolute;
+    bottom: 65px;
+    right: 30px;
+    width: 100px;
+    height: 110px;
+}
+
+/* Tamaño y animacion de la imagen */
+.muneco img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+}
+
+/* Movimiento del muñequito cuando cambia de imagen */
+.muneco img.mover {
+    transform: rotate(-12deg) translateY(-5px);
+}
+
+/* ================= BARRA SUPERIOR ================= */
+
+.barra-superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+    color: #9a83b2;
+    font-size: 14px;
+}
+
+/* Boton para regresar al menu */
+.volver {
+    border: none;
+    background-color: #eee4f8;
+    color: #79599c;
+    padding: 11px 17px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.volver:hover {
+    background-color: #d9c4ed;
+}
+
+/* ================= PANEL DE LOS EJERCICIOS ================= */
+
+/* Cuadro principal donde se realizan los calculos */
+.panel {
+    max-width: 520px;
+    margin: 30px auto 60px;
+    padding: 35px;
+    background-color: #f8f4fc;
+    border: 1px solid #eadcf5;
+    border-radius: 20px;
+    box-shadow: 0 5px 18px rgba(95, 68, 121, 0.08);
+}
+
+/* Numero decorativo de cada opcion */
+.icono-ejercicio {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e6d5f5;
+    color: #78569d;
+    border-radius: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Titulo de cada opcion */
+.panel h2 {
+    color: #78569d;
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+/* Descripcion del opcion */
+.panel p {
+    color: #82778c;
+    line-height: 1.6;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+/* Etiquetas de los campos */
+.panel label {
+    display: block;
+    color: #675477;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 9px;
+    margin-top: 17px;
+}
+
+/* Campos donde se ingresan los datos */
+.panel input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d9c7eb;
+    border-radius: 10px;
+    background-color: #ffffff;
+    outline: none;
+    color: #51445f;
+    font-size: 14px;
+}
+
+/* Color del borde cuando se selecciona un campo */
+.panel input:focus {
+    border-color: #a785c9;
+    box-shadow: 0 0 0 3px rgba(167, 133, 201, 0.13);
+}
+
+/* ================= BOTONES ================= */
+
+/* Boton principal para realizar los calculos */
+.boton-calcular {
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+    border: none;
+    border-radius: 11px;
+    background-color: #a889c9;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Efecto del boton al pasar el cursor */
+.boton-calcular:hover {
+    background-color: #8965ad;
+    transform: translateY(-2px);
+}
+
+/* ================= RESULTADOS ================= */
+
+/* Cuadro donde se muestran las respuestas */
+.resultado {
+    margin-top: 22px;
+    padding: 18px;
+    border-radius: 12px;
+    background-color: #eee5f7;
+    color: #70538e;
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.7;
+    min-height: 55px;
+}
+
+/* ================= PIE DE PAGINA ================= */
+
+footer {
+    text-align: center;
+    padding: 22px 10px 5px;
+    color: #9a88ab;
+    font-size: 13px;
+    border-top: 1px solid #eee5f5;
+}
+
+/* ================= ADAPTACION A CELULARES ================= */
+
+/* Ajustamos las tarjetas y el contenido para pantallas pequeñas */
+@media (max-width: 700px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .contenedor {
+        padding: 15px;
+    }
+
+    .banner {
+        height: 160px;
+    }
+
+    .encabezado h1 {
+        font-size: 23px;
+    }
+
+    .opciones {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjeta img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .tarjeta {
+        padding: 13px;
+        gap: 12px;
+    }
+
+    .panel {
+        padding: 22px;
+    }
+
+    .muneco {
+        width: 75px;
+        height: 85px;
+        right: 15px;
+    }
+
+    .barra-superior {
+        gap: 10px;
+        font-size: 12px;
+    }
+}

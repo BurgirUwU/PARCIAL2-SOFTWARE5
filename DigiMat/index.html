@@ -1,0 +1,299 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DigiMat - Matemáticas</title>
+
+    <!-- Conexion con Burgir que seria el css -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <!-- Contenedor principal de toda la pagina -->
+    <main class="contenedor">
+
+        <!-- ================= MENU PRINCIPAL ================= -->
+
+        <section id="menu" class="pantalla activa">
+
+            <!-- Banner de la pantalla principal -->
+            <div class="banner">
+                <img src="imagenes/banner.jpg" alt="Banner de DigiMat">
+            </div>
+
+            <!-- Titulos y descripciones del menu -->
+            <div class="encabezado">
+                <h1>Bienvenid@ a mi web – DigiMat</h1>
+
+                <p>Selecciona una de las opciones disponibles:</p>
+            </div>
+
+            <!-- Opciones a escoger -->
+            <div class="opciones">
+
+                <!-- Primera opcion, Cubo de un numero-->
+                <div class="tarjeta" onclick="mostrarPantalla('cubo')">
+
+                    <img src="imagenes/cubo.png" alt="Cubo">
+
+                    <div class="contenido-tarjeta">
+                        <h3>01. Cubo de un número</h3>
+                        <p>Calcula el cubo de cualquier número.</p>
+                        <span>Calcular cubo →</span>
+                    </div>
+
+                </div>
+
+                <!-- Segunda opcion, calculo del area d eun triangulo-->
+                <div class="tarjeta" onclick="mostrarPantalla('triangulo')">
+
+                    <img src="imagenes/triangulo.png" alt="Triángulo">
+
+                    <div class="contenido-tarjeta">
+                        <h3>02. Área de un triángulo</h3>
+                        <p>Obtén el área usando la base y la altura.</p>
+                        <span>Calcular área →</span>
+                    </div>
+
+                </div>
+
+                <!-- Tercera opcion, promedio de calificaciones -->
+                <div class="tarjeta" onclick="mostrarPantalla('promedio')">
+
+                    <img src="imagenes/promedio.png" alt="Promedio">
+
+                    <div class="contenido-tarjeta">
+                        <h3>03. Promedio de calificaciones</h3>
+                        <p>Calcula el promedio de tres notas.</p>
+                        <span>Calcular promedio →</span>
+                    </div>
+
+                </div>
+
+                <!-- Cuarto opcion, comparacion de numeros-->
+                <div class="tarjeta" onclick="mostrarPantalla('comparacion')">
+
+                    <img src="imagenes/comparacion.png" alt="Comparación">
+
+                    <div class="contenido-tarjeta">
+                        <h3>04. Comparación de valores</h3>
+                        <p>Descubre cuál número es mayor o menor.</p>
+                        <span>Comparar números →</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Muñequito decorativo-->
+            <div class="muneco">
+                <img id="imagenMuneco"
+                     src="imagenes/muneco1.png"
+                     alt="Muñequito decorativo">
+            </div>
+
+        </section>
+
+
+        <!-- ================= Calculo del cubo ================= -->
+
+        <section id="cubo" class="pantalla">
+
+            <div class="barra-superior">
+                <button class="volver" onclick="volverMenu()">
+                    ← Volver al menú
+                </button>
+                <span>DigiMat / Cubo</span>
+            </div>
+
+            <div class="panel">
+
+                <div class="icono-ejercicio">01</div>
+
+                <h2>Cubo de un número</h2>
+
+                <p>
+                    Escribe un número y descubre cuál es su resultado
+                    elevado al cubo.
+                </p>
+
+                <label for="numeroCubo">Ingresa un número:</label>
+
+                <input type="number" id="numeroCubo"
+                       placeholder="Ingresa un número">
+
+                <button class="boton-calcular" onclick="calcularCubo()">
+                    Calcular cubo
+                </button>
+
+                <div id="resultadoCubo" class="resultado">
+                    Aquí aparecerá tu resultado.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= Calculo del Area del triangulo en metros ================= -->
+
+        <section id="triangulo" class="pantalla">
+
+            <div class="barra-superior">
+                <button class="volver" onclick="volverMenu()">
+                    ← Volver al menú
+                </button>
+                <span>DigiMat / Triángulo</span>
+            </div>
+
+            <div class="panel">
+
+                <div class="icono-ejercicio">02</div>
+
+                <h2>Área de un triángulo</h2>
+
+                <p>
+                    Coloca la base y la altura del triángulo
+                    para conocer su área.
+                </p>
+
+                <label for="base">Ingresa la base:</label>
+
+                <input type="number" id="base"
+                       placeholder="Ingresa la base">
+
+                <label for="altura">Ingresa la altura:</label>
+
+                <input type="number" id="altura"
+                       placeholder="Ingresa la altura">
+
+                <button class="boton-calcular" onclick="calcularArea()">
+                    Calcular área
+                </button>
+
+                <div id="resultadoArea" class="resultado">
+                    Aquí aparecerá tu resultado.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= Calculo del Promedio de las calificaciones ================= -->
+
+        <section id="promedio" class="pantalla">
+
+            <div class="barra-superior">
+                <button class="volver" onclick="volverMenu()">
+                    ← Volver al menú
+                </button>
+                <span>DigiMat / Promedio</span>
+            </div>
+
+            <div class="panel">
+
+                <div class="icono-ejercicio">03</div>
+
+                <h2>Promedio de calificaciones</h2>
+
+                <p>
+                    Escribe el nombre del estudiante y sus tres
+                    calificaciones.
+                </p>
+
+                <label for="nombre">Nombre del estudiante:</label>
+
+                <input type="text" id="nombre"
+                       placeholder="Ingresa el nombre">
+
+                <label for="nota1">Primera calificación:</label>
+
+                <input type="number" id="nota1"
+                       placeholder="Ingresa la primera nota">
+
+                <label for="nota2">Segunda calificación:</label>
+
+                <input type="number" id="nota2"
+                       placeholder="Ingresa la segunda nota">
+
+                <label for="nota3">Tercera calificación:</label>
+
+                <input type="number" id="nota3"
+                       placeholder="Ingresa la tercera nota">
+
+                <button class="boton-calcular" onclick="calcularPromedio()">
+                    Calcular promedio
+                </button>
+
+                <div id="resultadoPromedio" class="resultado">
+                    Aquí aparecerá tu resultado.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= Comparacion de Numeros ================= -->
+
+        <section id="comparacion" class="pantalla">
+
+            <div class="barra-superior">
+                <button class="volver" onclick="volverMenu()">
+                    ← Volver al menú
+                </button>
+                <span>DigiMat / Comparación</span>
+            </div>
+
+            <div class="panel">
+
+                <div class="icono-ejercicio">04</div>
+
+                <h2>Comparación de valores</h2>
+
+                <p>
+                    Ingresa dos números para saber cuál es mayor,
+                    cuál es menor y cuál es su diferencia.
+                </p>
+
+                <label for="numero1">Primer número:</label>
+
+                <input type="number" id="numero1"
+                       placeholder="Ingresa el primer número">
+
+                <label for="numero2">Segundo número:</label>
+
+                <input type="number" id="numero2"
+                       placeholder="Ingresa el segundo número">
+
+                <button class="boton-calcular" onclick="compararNumeros()">
+                    Comparar números
+                </button>
+
+                <div id="resultadoComparacion" class="resultado">
+                    Aquí aparecerá tu resultado.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= Pie de pagina ================= -->
+
+        <footer>
+            PanConQueso – 2026
+        </footer>
+
+    </main>
+
+    <!-- Conexion con el archivo codigo, que seria el JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
