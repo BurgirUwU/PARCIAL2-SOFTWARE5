@@ -1,2 +1,0 @@
-# PARCIAL2-SOFTWARE5
-Parcial 2 
